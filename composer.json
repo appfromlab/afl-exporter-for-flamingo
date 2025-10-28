@@ -1,0 +1,24 @@
+{
+    "name": "appfromlab/afl-exporter-for-flamingo",
+    "description": "Provide hooks for Flamingo export class.",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Appfromlab Pte Ltd"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "config": {
+        "classmap-authoritative": true,
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "autoloader-suffix": "AFL_Exporter_For_Flamingo"
+    }
+}

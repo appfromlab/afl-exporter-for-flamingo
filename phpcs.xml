@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="AFL Exporter for Flamingo">
+	<description>Ruleset for AFL Exporter for Flamingo plugin.</description>
+
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName"/>
+		<exclude name="WordPress.NamingConventions.ValidHookName"/>
+		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+		<exclude name="Squiz.Commenting.FunctionComment.Missing"/>
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/>
+		<exclude name="Squiz.Commenting.VariableComment.Missing"/>
+		<exclude name="Generic.Commenting.DocComment.MissingShort"/>
+		<exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
+	</rule>
+</ruleset>
