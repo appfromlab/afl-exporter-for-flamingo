@@ -4,9 +4,9 @@ Tags: account
 License: GPLv3 or later
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
-Prevent brute force WordPress and WooCommerce account login and password reset.
+Provide hooks to extend Flamingo Exporter class.
 
 == Description ==
 
