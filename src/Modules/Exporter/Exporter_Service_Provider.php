@@ -1,7 +1,7 @@
 <?php
 namespace Appfromlab\AFL_Exporter_For_Flamingo\Modules\Exporter;
 
-use Appfromlab\AFL_Exporter_For_Flamingo\Framework\Service_Provider; 
+use Appfromlab\AFL_Exporter_For_Flamingo\Framework\Service_Provider;
 
 defined( 'ABSPATH' ) || exit;
 
