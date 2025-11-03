@@ -64,8 +64,8 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 		// Print header.
 		$csv_header = array_merge(
 			array(
-				'id'   => __( 'ID', 'flamingo' ),
-				'date' => __( 'Date', 'flamingo' ),
+				'id'   => __( 'ID', 'afl-exporter-for-flamingo' ),
+				'date' => __( 'Date', 'afl-exporter-for-flamingo' ),
 			),
 			array_combine( $form_field_keys, $form_field_keys )
 		);

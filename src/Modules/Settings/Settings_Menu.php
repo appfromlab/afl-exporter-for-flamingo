@@ -15,10 +15,10 @@ class Settings_Menu {
 	public static function add_admin_menu() {
 
 		add_options_page(
-			__( 'AFL Exporter for Flamingo Settings', 'afl-account-tools' ),
-			__( 'AFL Exporter for Flamingo', 'afl-account-tools' ),
+			__( 'AFL Exporter for Flamingo Settings', 'afl-exporter-for-flamingo' ),
+			__( 'AFL Exporter for Flamingo', 'afl-exporter-for-flamingo' ),
 			'manage_options',
-			'afl-account-tools',
+			'afl-exporter-for-flamingo',
 			static::class . '::render_settings_page'
 		);
 	}
