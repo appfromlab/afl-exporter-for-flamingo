@@ -1,6 +1,8 @@
 <?php
 namespace Appfromlab\AFL_Exporter_For_Flamingo\Modules\Exporter;
 
+defined( 'ABSPATH' ) || exit;
+
 class Exporter_Inbound_Csv extends \Flamingo_Csv {
 
 	public function get_file_name() {
@@ -20,8 +22,9 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 			'order'          => 'DESC',
 		);
 
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended, WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 		if ( ! empty( $_REQUEST['s'] ) ) {
-			$args['s'] = $_REQUEST['s'];
+			$args['s'] = sanitize_text_field( wp_unslash( $_REQUEST['s'] ) );
 		}
 
 		if ( ! empty( $_REQUEST['orderby'] ) ) {
@@ -36,22 +39,23 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 
 		if (
 			! empty( $_REQUEST['order'] )
-			&& 'asc' === strtolower( $_REQUEST['order'] )
+			&& 'asc' === strtolower( sanitize_text_field( wp_unslash( $_REQUEST['order'] ) ) )
 		) {
 			$args['order'] = 'ASC';
 		}
 
 		if ( ! empty( $_REQUEST['m'] ) ) {
-			$args['m'] = $_REQUEST['m'];
+			$args['m'] = sanitize_text_field( wp_unslash( $_REQUEST['m'] ) );
 		}
 
 		if ( ! empty( $_REQUEST['channel_id'] ) ) {
-			$args['channel_id'] = $_REQUEST['channel_id'];
+			$args['channel_id'] = sanitize_text_field( wp_unslash( $_REQUEST['channel_id'] ) );
 		}
 
 		if ( ! empty( $_REQUEST['channel'] ) ) {
-			$args['channel'] = $_REQUEST['channel'];
+			$args['channel'] = sanitize_text_field( wp_unslash( $_REQUEST['channel'] ) );
 		}
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
 		$items = \Flamingo_Inbound_Message::find( $args );
 
@@ -90,7 +94,7 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 					$col = isset( $item->fields[ $field_key ] ) ? $item->fields[ $field_key ] : '';
 
 					if ( is_array( $col ) ) {
-						$col = flamingo_array_flatten( $col );
+						$col = \flamingo_array_flatten( $col );
 						$col = array_filter( array_map( 'trim', $col ) );
 						$col = implode( ', ', $col );
 					}
