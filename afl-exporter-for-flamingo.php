@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       AFL Exporter for Flamingo
- * Plugin URI:        https://www.appfromlab.com/product/afl-exporter-for-flamingo/
- * Description:       Provide hooks for Flamingo Export class
+ * Plugin URI:        https://github.com/appfromlab/afl-exporter-for-flamingo/
+ * Description:       Provide hooks for Flamingo Export class.
  * Author:            Appfromlab
  * Author URI:        https://www.appfromlab.com/
  * License:           GPL v3 or later
@@ -30,17 +30,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/**
- * Instructions
- *
- * Rename name - AFL Exporter for Flamingo
- * Rename namespace - Appfromlab\AFL_Exporter_For_Flamingo
- * Rename hooks - Appfromlab/AFL_Exporter_For_Flamingo/
- * Rename define - AFL_EXPORTER_FOR_FLAMINGO_
- * Rename text-domain - afl-exporter-for-flamingo
- * Setup config - See config folder
- * Test comment
- */
 namespace Appfromlab\AFL_Exporter_For_Flamingo;
 
 use Appfromlab\AFL_Exporter_For_Flamingo\Plugin\Plugin;
