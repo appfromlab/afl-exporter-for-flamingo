@@ -8,10 +8,10 @@ AFL Exporter for Flamingo enhances the Flamingo plugin's CSV export capabilities
 
 ## Features
 
-- Filter hook to customize CSV headers
-- Filter hook to modify individual row data before export
-- Compatible with WordPress 6.0+
-- Seamless integration with Flamingo plugin
+- Filter hook to customize CSV headers.
+- Filter hook to modify individual row data before export.
+- Compatible with WordPress 6.0+.
+- Seamless integration with Flamingo plugin.
 
 ## Usage Examples
 
@@ -25,7 +25,7 @@ AFL Exporter for Flamingo enhances the Flamingo plugin's CSV export capabilities
  * @param array $items     Array of Flamingo_Inbound_Message objects
  * @return array Modified header array
  */
-add_filter( 'afl_eff_flamingo_inbound_csv_header', function( $header, $items ) {
+add_filter( 'afl_exporter_for_flamingo_inbound_csv_header', function( $header, $items ) {
     // Add a new column
     $header['custom_field'] = 'Custom Field';
     
@@ -50,7 +50,7 @@ add_filter( 'afl_eff_flamingo_inbound_csv_header', function( $header, $items ) {
  * @param array $csv_header    CSV header array
  * @return array Modified row data
  */
-add_filter( 'afl_eff_flamingo_inbound_csv_item', function( $row, $item, $csv_header ) {
+add_filter( 'afl_exporter_for_flamingo_inbound_csv_item', function( $row, $item, $csv_header ) {
     // Add custom field data
     $row['custom_field'] = get_post_meta($item->id(), '_custom_field', true);
     
@@ -70,12 +70,12 @@ add_filter( 'afl_eff_flamingo_inbound_csv_item', function( $row, $item, $csv_hea
 
 1. **Adding a Custom Status Column:**
 ```php
-add_filter( 'afl_eff_flamingo_inbound_csv_header', function( $header, $items ) {
+add_filter( 'afl_exporter_for_flamingo_inbound_csv_header', function( $header, $items ) {
     $header['status'] = 'Processing Status';
     return $header;
 }, 10, 2);
 
-add_filter( 'afl_eff_flamingo_inbound_csv_item', function( $row, $item, $csv_header ) {
+add_filter( 'afl_exporter_for_flamingo_inbound_csv_item', function( $row, $item, $csv_header ) {
     $status = get_post_meta($item->id(), '_processing_status', true);
     $row['status'] = $status ? $status : 'New';
     return $row;
@@ -84,7 +84,7 @@ add_filter( 'afl_eff_flamingo_inbound_csv_item', function( $row, $item, $csv_hea
 
 2. **Formatting Phone Numbers:**
 ```php
-add_filter( 'afl_eff_flamingo_inbound_csv_item', function($row, $item, $csv_header ) {
+add_filter( 'afl_exporter_for_flamingo_inbound_csv_item', function($row, $item, $csv_header ) {
     if (isset($row['phone'])) {
         // Format: (XXX) XXX-XXXX
         $row['phone'] = preg_replace('/[^0-9]/', '', $row['phone']);
