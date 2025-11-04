@@ -14,8 +14,8 @@ AFL Exporter for Flamingo enhances the CSV export functionality of the Flamingo 
 
 = Key Features =
 
-* `afl_eff_flamingo_inbound_csv_header` filter to customize CSV headers
-* `afl_eff_flamingo_inbound_csv_item` filter to modify individual row data
+* `afl_exporter_for_flamingo_inbound_csv_header` filter to customize CSV headers
+* `afl_exporter_for_flamingo_inbound_csv_item` filter to modify individual row data
 * Seamless integration with Flamingo plugin
 * Developer-friendly hooks with comprehensive parameters
 

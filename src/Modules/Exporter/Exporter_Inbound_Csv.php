@@ -73,7 +73,7 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 			),
 			array_combine( $form_field_keys, $form_field_keys )
 		);
-		$csv_header = apply_filters( 'afl_eff_flamingo_inbound_csv_header', $csv_header, $items );
+		$csv_header = apply_filters( 'afl_exporter_for_flamingo_inbound_csv_header', $csv_header, $items );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo \flamingo_csv_row( $csv_header );
@@ -106,7 +106,7 @@ class Exporter_Inbound_Csv extends \Flamingo_Csv {
 			$row['id']   = $item->id(); // Post ID.
 			$row['date'] = get_post_time( 'c', false, $item->id() ); // Date.
 
-			$row = apply_filters( 'afl_eff_flamingo_inbound_csv_item', $row, $item, $csv_header );
+			$row = apply_filters( 'afl_exporter_for_flamingo_inbound_csv_item', $row, $item, $csv_header );
 
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo \flamingo_csv_row( $row );
