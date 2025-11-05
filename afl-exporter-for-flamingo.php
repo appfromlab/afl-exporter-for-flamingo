@@ -9,7 +9,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       afl-exporter-for-flamingo
  * Domain Path:       /languages/
- * Version:           0.9.3
+ * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Tested up to:      6.8
