@@ -11,11 +11,34 @@ jobs:
       # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Create a temporary directory for the plugin
+      - name: Create plugin directory structure
+        run: |
+          mkdir -p build/${{ vars.PLUGIN_FOLDER_NAME }}
           
-      # Upload ZIP file as an artifact
-      - name: Upload ZIP file
-        uses: actions/upload-artifact@v4
+      # Copy plugin files (excluding development files)
+      - name: Copy plugin files
+        run: |
+          # Copy all files except those listed in .distignore
+          rsync -r \
+            --exclude-from=.distignore \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=.gitignore \
+            --exclude=.gitattributes \
+            . build/${{ vars.PLUGIN_FOLDER_NAME }}/
+
+      # Create ZIP file
+      - name: Create ZIP file
+        run: |
+          cd build
+          zip -r ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip ${{ vars.PLUGIN_FOLDER_NAME }}
+
+      # Upload ZIP file as a release asset
+      - name: Upload ZIP to release
+        uses: softprops/action-gh-release@v1
         with:
-          name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}
-          path: /home/runner/work/${{ vars.PLUGIN_FOLDER_NAME }}/
-          retention-days: 3
+          files: build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
