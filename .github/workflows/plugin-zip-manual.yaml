@@ -36,6 +36,7 @@ jobs:
       - name: Upload ZIP as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
+          name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}
           path: .build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
           retention-days: 3
+          compression-level: 0
