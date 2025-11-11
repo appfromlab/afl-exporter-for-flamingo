@@ -9,7 +9,7 @@ class Plugin_Actions {
 
 	public static function plugin_admin_menu() {
 
-		do_action( 'Appfromlab/AFL_Exporter_For_Flamingo/plugin_admin_menu' );
+		do_action( 'afl_exporter_for_flamingo/plugin_admin_menu' );
 	}
 
 	public static function plugin_action_links( $links ) {

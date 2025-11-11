@@ -2,9 +2,22 @@
 <ruleset name="AFL Exporter for Flamingo">
 	<description>Ruleset for AFL Exporter for Flamingo plugin.</description>
 
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="afl_exporter_for_flamingo"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.ValidHookName">
+		<properties>
+			<property name="additionalWordDelimiters" value="/"/>
+		</properties>
+	</rule>
+
 	<rule ref="WordPress">
 		<exclude name="WordPress.Files.FileName"/>
-		<exclude name="WordPress.NamingConventions.ValidHookName"/>
 		<exclude name="Squiz.Commenting.ClassComment.Missing"/>
 		<exclude name="Squiz.Commenting.FileComment.Missing"/>
 		<exclude name="Squiz.Commenting.FunctionComment.Missing"/>
