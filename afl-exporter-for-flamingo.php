@@ -38,7 +38,7 @@ use Appfromlab\AFL_Exporter_For_Flamingo\Framework\Logger;
 defined( 'ABSPATH' ) || exit;
 
 // definition.
-define( 'AFL_EXPORTER_FOR_FLAMINGO_VERSION', '0.9.3' );
+define( 'AFL_EXPORTER_FOR_FLAMINGO_VERSION', '1.0.0' );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_FILE_PATH', __FILE__ );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
