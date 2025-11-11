@@ -9,7 +9,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       afl-exporter-for-flamingo
  * Domain Path:       /languages/
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Tested up to:      6.8
@@ -38,7 +38,7 @@ use Appfromlab\AFL_Exporter_For_Flamingo\Framework\Logger;
 defined( 'ABSPATH' ) || exit;
 
 // definition.
-define( 'AFL_EXPORTER_FOR_FLAMINGO_VERSION', '1.0.0' );
+define( 'AFL_EXPORTER_FOR_FLAMINGO_VERSION', '1.1.0' );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_FILE_PATH', __FILE__ );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'AFL_EXPORTER_FOR_FLAMINGO_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
