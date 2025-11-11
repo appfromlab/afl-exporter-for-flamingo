@@ -41,4 +41,4 @@ jobs:
         with:
           files: build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
