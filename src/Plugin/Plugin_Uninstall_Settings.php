@@ -51,7 +51,7 @@ class Plugin_Uninstall_Settings extends Settings {
 
 		switch ( $key ) {
 			case 'delete_data':
-				$value = apply_filters( 'Appfromlab/AFL_Exporter_For_Flamingo/Plugin_Uninstall_Settings/default_delete_data', false );
+				$value = apply_filters( 'afl_exporter_for_flamingo/plugin_uninstall_settings/default_delete_data', false );
 				break;
 			default:
 				$value = '';
