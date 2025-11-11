@@ -7,7 +7,7 @@
 /.distignore
 /.gitattributes
 /.gitignore
-/.xml
+/*.xml
 /composer.json
 /composer.lock
 /README.md
