@@ -1,4 +1,4 @@
-name: Create Plugin Release ZIP
+name: Create Plugin ZIP on Release
 
 on:
   release:
@@ -16,7 +16,7 @@ jobs:
       # Create a temporary directory for the plugin
       - name: Create plugin directory structure
         run: |
-          mkdir -p build/${{ vars.PLUGIN_FOLDER_NAME }}
+          mkdir -p .build/${{ vars.PLUGIN_FOLDER_NAME }}
           
       # Copy plugin files (excluding development files)
       - name: Copy plugin files
@@ -24,22 +24,19 @@ jobs:
           # Copy all files except those listed in .distignore
           rsync -r \
             --exclude-from=.distignore \
-            --exclude=.git \
-            --exclude=.github \
-            --exclude=.gitignore \
-            --exclude=.gitattributes \
-            . build/${{ vars.PLUGIN_FOLDER_NAME }}/
+            --exclude='.*' \
+            . .build/${{ vars.PLUGIN_FOLDER_NAME }}/
 
       # Create ZIP file
       - name: Create ZIP file
         run: |
-          cd build
+          cd .build
           zip -r ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip ${{ vars.PLUGIN_FOLDER_NAME }}
 
       # Upload ZIP file as a release asset
       - name: Upload ZIP to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
-          files: build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
+          files: .build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
