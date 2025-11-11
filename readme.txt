@@ -4,7 +4,7 @@ Tags: account
 License: GPLv3 or later
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 Provide hooks to extend Flamingo Exporter class.
 
