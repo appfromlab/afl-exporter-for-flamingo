@@ -10,15 +10,15 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Create a temporary directory for the plugin
-      - name: Create plugin directory structure
+      - name: Create plugin build directory
         run: |
           mkdir -p .build/${{ vars.PLUGIN_FOLDER_NAME }}
           
       # Copy plugin files (excluding development files)
-      - name: Copy plugin files
+      - name: Copy plugin files into build directory
         run: |
           # Copy all files except those listed in .distignore
           rsync -r \
@@ -26,17 +26,10 @@ jobs:
             --exclude='.*' \
             . .build/${{ vars.PLUGIN_FOLDER_NAME }}/
 
-      # Create ZIP file
-      - name: Create ZIP file
-        run: |
-          cd .build
-          zip -r ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip ${{ vars.PLUGIN_FOLDER_NAME }}
-
-      # Upload ZIP file as a workflow artifact
-      - name: Upload ZIP as artifact
+      # Upload plugin directory as a workflow artifact
+      - name: Upload plugin as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}
-          path: .build/${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}.zip
+          name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}-test
+          path: .build/${{ vars.PLUGIN_FOLDER_NAME }}
           retention-days: 3
-          compression-level: 0
