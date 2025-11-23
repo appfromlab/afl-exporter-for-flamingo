@@ -23,7 +23,7 @@ class Plugin_Deactivator {
 	public static function delete_transients() {
 		global $wpdb;
 
-		$option_key = plugin()->get_config( 'app' )->get( 'option_key' );
+		$option_key = plugin()->config( 'app' )->get( 'option_key' );
 
 		$transient_name_like         = $wpdb->esc_like( '_transient_' . $option_key . '_' ) . '%';
 		$transient_timeout_name_like = $wpdb->esc_like( '_transient_timeout_' . $option_key . '_' ) . '%';
