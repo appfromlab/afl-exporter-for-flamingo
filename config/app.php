@@ -13,9 +13,9 @@ return array(
 	'option_key_prefix'  => 'afl_eff_',
 	'plugin_links'       => array(
 		'wordpress_org' => '',
-		'premium'       => 'https://www.appfromlab.com/product/afl-exporter-for-flamingo/',
-		'documentation' => 'https://www.appfromlab.com/docs/afl-exporter-for-flamingo/',
-		'support'       => 'https://www.appfromlab.com/contact/',
+		'premium'       => '',
+		'documentation' => 'https://github.com/appfromlab/afl-exporter-for-flamingo/',
+		'support'       => '',
 	),
 	'providers'          => array(
 		'Plugin_Service_Provider'   => Appfromlab\AFL_Exporter_For_Flamingo\Plugin\Plugin_Service_Provider::class,
