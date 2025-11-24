@@ -1,4 +1,4 @@
-<?php
+<?php defined( 'ABSPATH' ) || exit;
 
 return array(
 	'name'               => 'AFL Exporter for Flamingo',

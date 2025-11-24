@@ -1,22 +1,22 @@
 === AFL Exporter for Flamingo ===
 Contributors: appfromlab
-Tags: account
+Tags: flamingo
 License: GPLv3 or later
 Requires at least: 6.0
 Tested up to: 6.8
 Stable tag: 1.1.6
 
-Provide hooks to extend Flamingo Exporter class.
+Provide hooks to extend the Flamingo CSV Exporter class.
 
 == Description ==
 
-AFL Exporter for Flamingo enhances the CSV export functionality of the Flamingo plugin by providing two powerful developer hooks:
+AFL Exporter for Flamingo enhances the CSV export functionality of the Flamingo plugin by providing two powerful developer hooks.
 
 = Key Features =
 
 * `afl_exporter_for_flamingo_inbound_csv_header` filter to customize CSV headers
 * `afl_exporter_for_flamingo_inbound_csv_item` filter to modify individual row data
-* Seamless integration with Flamingo plugin
+* Seamless integration with the Flamingo plugin
 * Developer-friendly hooks with comprehensive parameters
 
 This plugin is particularly useful for developers who need to:
@@ -33,4 +33,8 @@ No configuration is needed - simply install the plugin and use the filters in yo
 Upload the plugin to your WordPress site and activate it.
 
 == Changelog ==
+
+= 1.1.6 - 2025-11-12 =
+
+* Initial release.
 

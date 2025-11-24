@@ -13,6 +13,7 @@
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Tested up to:      6.8
+ * Requires Plugins:  flamingo
  *
  * Copyright (C) 2025 Appfromlab Pte Ltd
  *
