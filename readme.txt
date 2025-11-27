@@ -4,7 +4,7 @@ Tags: flamingo
 License: GPLv3 or later
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.1.7
+Stable tag: 1.2.0
 
 Provide hooks to extend the Flamingo CSV Exporter class.
 
