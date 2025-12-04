@@ -4,7 +4,7 @@ Tags: flamingo
 License: GPLv3 or later
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 
 Provide hooks to extend the Flamingo CSV Exporter class.
 
@@ -39,6 +39,11 @@ The following plugins integrates with this plugin:
 Upload the plugin to your WordPress site and activate it.
 
 == Changelog ==
+
+= 1.2.3 - 2025-12-04 =
+
+* Added Github Action for WordPress.org deployment.
+* Remove legacy code from other plugin.
 
 = 1.1.7 - 2025-11-24 =
 
