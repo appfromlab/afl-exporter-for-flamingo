@@ -17,7 +17,7 @@ jobs:
       # Create a temporary directory for the plugin
       - name: Create plugin build directory
         run: |
-          mkdir -p .build/${{ vars.PLUGIN_FOLDER_NAME }}
+          mkdir -p .build/${{ vars.PLUGIN_FOLDER_NAME }}/${{ vars.PLUGIN_FOLDER_NAME }}
           
       # Copy plugin files (excluding development files)
       - name: Copy plugin files into build directory
@@ -26,12 +26,12 @@ jobs:
           rsync -r \
             --exclude-from=.distignore \
             --exclude='.*' \
-            . .build/${{ vars.PLUGIN_FOLDER_NAME }}/
+            . .build/${{ vars.PLUGIN_FOLDER_NAME }}/${{ vars.PLUGIN_FOLDER_NAME }}/
 
       # Upload plugin directory as a workflow artifact
       - name: Upload plugin as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}-test
-          path: .build/
+          path: .build/${{ vars.PLUGIN_FOLDER_NAME }}/
           retention-days: 14
