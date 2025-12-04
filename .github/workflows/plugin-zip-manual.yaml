@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ vars.PLUGIN_FOLDER_NAME }}-v${{ github.ref_name}}-test
-          path: .build//${{ vars.PLUGIN_FOLDER_NAME }}/
+          path: .build/${{ vars.PLUGIN_FOLDER_NAME }}/
           retention-days: 3
