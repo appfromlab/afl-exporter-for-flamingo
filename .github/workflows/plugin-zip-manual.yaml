@@ -24,7 +24,7 @@ jobs:
           rsync -r \
             --exclude-from=.distignore \
             --exclude='.*' \
-            . .build/${{ vars.PLUGIN_FOLDER_NAME }}//${{ vars.PLUGIN_FOLDER_NAME }}/
+            . .build/${{ vars.PLUGIN_FOLDER_NAME }}/${{ vars.PLUGIN_FOLDER_NAME }}/
 
       # Upload plugin directory as a workflow artifact
       - name: Upload plugin as artifact
