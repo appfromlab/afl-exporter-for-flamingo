@@ -4,7 +4,7 @@ permissions:
 on:
   push:
     branches:
-    - main
+    - wordpress-org
 jobs:
   trunk:
     name: Push to trunk
