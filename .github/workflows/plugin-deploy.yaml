@@ -1,5 +1,5 @@
 # The name of the Github Action that displays in github.com/<username>/<repo>/actions
-name: Deploy to WordPress.org Repository
+name: WordPress.org Deploy Plugin
 
 # Here we can define the events "on" which the action should be triggered.
 on:
