@@ -6,6 +6,8 @@
 !.github
 !.distignore
 !.build
+!.wordpress-org
+
 
 # ignore all files that start with ~
 ~*
