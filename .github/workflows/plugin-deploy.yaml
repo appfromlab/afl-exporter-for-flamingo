@@ -15,6 +15,11 @@ on:
     # run only when a new release is published, but not when it's classified as a pre-release.
     types: [released]
 
+# Define the permissions for the GITHUB_TOKEN used in this workflow.
+permissions:
+  # We only need to write to contents to be able to upload the release asset.
+  contents: write
+
 # A list of jobs involved in this workflow.
 jobs:
 
